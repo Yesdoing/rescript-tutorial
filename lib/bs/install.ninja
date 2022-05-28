@@ -1,0 +1,30 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o Index.cmi : cp ../bs/src/Index.cmi
+o Index.cmj : cp ../bs/src/Index.cmj
+o Index.cmt : cp ../bs/src/Index.cmt
+o Index.res : cp ../../src/Index.res
+o Quiz_1.cmi : cp ../bs/src/quiz/Quiz_1.cmi
+o Quiz_1.cmj : cp ../bs/src/quiz/Quiz_1.cmj
+o Quiz_1.cmt : cp ../bs/src/quiz/Quiz_1.cmt
+o Quiz_1.res : cp ../../src/quiz/Quiz_1.res
+o Quiz_2.cmi : cp ../bs/src/quiz/Quiz_2.cmi
+o Quiz_2.cmj : cp ../bs/src/quiz/Quiz_2.cmj
+o Quiz_2.cmt : cp ../bs/src/quiz/Quiz_2.cmt
+o Quiz_2.res : cp ../../src/quiz/Quiz_2.res
+o Quiz_3.cmi : cp ../bs/src/quiz/Quiz_3.cmi
+o Quiz_3.cmj : cp ../bs/src/quiz/Quiz_3.cmj
+o Quiz_3.cmt : cp ../bs/src/quiz/Quiz_3.cmt
+o Quiz_3.res : cp ../../src/quiz/Quiz_3.res
+o Quiz_4.cmi : cp ../bs/src/quiz/Quiz_4.cmi
+o Quiz_4.cmj : cp ../bs/src/quiz/Quiz_4.cmj
+o Quiz_4.cmt : cp ../bs/src/quiz/Quiz_4.cmt
+o Quiz_4.res : cp ../../src/quiz/Quiz_4.res
+o Quiz_5.cmi : cp ../bs/src/quiz/Quiz_5.cmi
+o Quiz_5.cmj : cp ../bs/src/quiz/Quiz_5.cmj
+o Quiz_5.cmt : cp ../bs/src/quiz/Quiz_5.cmt
+o Quiz_5.res : cp ../../src/quiz/Quiz_5.res
+build install.stamp : touch Index.cmi Index.cmj Quiz_1.cmi Quiz_1.cmj Quiz_2.cmi Quiz_2.cmj Quiz_3.cmi Quiz_3.cmj Quiz_4.cmi Quiz_4.cmj Quiz_5.cmi Quiz_5.cmj 

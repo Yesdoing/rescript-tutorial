@@ -1,0 +1,28 @@
+rescript = 1
+rule astj
+  command = /Users/dalyoon/Documents/playground/rescript-tutorial/node_modules/rescript/darwin/bsc.exe  -bs-v 9.1.4  -absname -bs-ast -o $out $i
+o src/Index.ast : astj ../../src/Index.res
+rule deps
+  command = /Users/dalyoon/Documents/playground/rescript-tutorial/node_modules/rescript/darwin/bsb_helper.exe -hash 6372660215ce9403434fed86647373d5 $in
+  restat = 1
+o src/Index.d : deps src/Index.ast
+rule mij
+  command = /Users/dalyoon/Documents/playground/rescript-tutorial/node_modules/rescript/darwin/bsc.exe -I src/quiz -I src   -bs-package-name rescript-tutorial -bs-package-output es6:$in_d:.mjs $i
+  dyndep = 1
+  restat = 1
+o src/Index.cmj src/Index.cmi ../../src/Index.mjs : mij src/Index.ast
+o src/quiz/Quiz_1.ast : astj ../../src/quiz/Quiz_1.res
+o src/quiz/Quiz_1.d : deps src/quiz/Quiz_1.ast
+o src/quiz/Quiz_1.cmj src/quiz/Quiz_1.cmi ../../src/quiz/Quiz_1.mjs : mij src/quiz/Quiz_1.ast
+o src/quiz/Quiz_2.ast : astj ../../src/quiz/Quiz_2.res
+o src/quiz/Quiz_2.d : deps src/quiz/Quiz_2.ast
+o src/quiz/Quiz_2.cmj src/quiz/Quiz_2.cmi ../../src/quiz/Quiz_2.mjs : mij src/quiz/Quiz_2.ast
+o src/quiz/Quiz_3.ast : astj ../../src/quiz/Quiz_3.res
+o src/quiz/Quiz_3.d : deps src/quiz/Quiz_3.ast
+o src/quiz/Quiz_3.cmj src/quiz/Quiz_3.cmi ../../src/quiz/Quiz_3.mjs : mij src/quiz/Quiz_3.ast
+o src/quiz/Quiz_4.ast : astj ../../src/quiz/Quiz_4.res
+o src/quiz/Quiz_4.d : deps src/quiz/Quiz_4.ast
+o src/quiz/Quiz_4.cmj src/quiz/Quiz_4.cmi ../../src/quiz/Quiz_4.mjs : mij src/quiz/Quiz_4.ast
+o src/quiz/Quiz_5.ast : astj ../../src/quiz/Quiz_5.res
+o src/quiz/Quiz_5.d : deps src/quiz/Quiz_5.ast
+o src/quiz/Quiz_5.cmj src/quiz/Quiz_5.cmi ../../src/quiz/Quiz_5.mjs : mij src/quiz/Quiz_5.ast
